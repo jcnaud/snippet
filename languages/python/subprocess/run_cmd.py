@@ -28,7 +28,7 @@ def run_cmd(cmd):
 
 def main():
 
-    # Minimal config configuration
+    # Minimal logging configuration
     logging.basicConfig(level=logging.DEBUG)
     logging.getLogger(__name__).addHandler(logging.NullHandler())
 
