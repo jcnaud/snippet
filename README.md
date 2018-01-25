@@ -9,4 +9,6 @@ Collection of snippet
 
 Language :
 - Python
+  - jinja2
   - logging
+  - subprocess
