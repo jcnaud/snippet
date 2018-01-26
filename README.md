@@ -12,3 +12,5 @@ Language :
   - jinja2
   - logging
   - subprocess
+  - re
+    - binary_parsing
