@@ -61,6 +61,7 @@ def main():
         unpacked_data = s.unpack(asc)
         print(unpacked_data)
 
+    print(" === End of this programme ===")
 
 if __name__ == "__main__":
     main()
