@@ -10,7 +10,9 @@ Collection of snippet
 Language :
 - Python
   - jinja2
+  - jsonschema
   - logging
-  - subprocess
   - re
     - binary_parsing
+  - schema
+  - subprocess
