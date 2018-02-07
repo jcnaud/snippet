@@ -14,5 +14,6 @@ Language :
   - logging
   - re
     - binary_parsing
+    - regex_sub (substitution)
   - schema
   - subprocess
