@@ -1,0 +1,8 @@
+---
+users :
+- name : Bob
+  age : 19
+  state : EnAbLe
+- name : Alice
+  age : 21
+  state : ENAble
