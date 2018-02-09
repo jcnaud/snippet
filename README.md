@@ -9,6 +9,7 @@ Collection of snippet
 
 Language :
 - Python
+  - argparse
   - jinja2
   - jsonschema
   - logging
