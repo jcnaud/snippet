@@ -19,4 +19,6 @@ Language :
     - research_examples (match, search, findall, fullmatch, finditer)
   - schema
   - subprocess
+    - real_time_cmd : get stdout and stderr in real time
+    - run_cmd : manage terminal command error
   - unittest
