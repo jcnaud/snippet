@@ -16,6 +16,7 @@ Language :
   - re
     - binary_parsing
     - regex_sub (substitution)
+    - research_examples (match, search, findall, fullmatch, finditer)
   - schema
   - subprocess
   - unittest
