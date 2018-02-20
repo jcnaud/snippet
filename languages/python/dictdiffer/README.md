@@ -1,5 +1,7 @@
 # Dictdiffer
 
+For more option, don't use **disctdiffer**, use **deepdiff**
+
 ## Install 
 This command install **dictdiffer**
 
@@ -7,7 +9,7 @@ This command install **dictdiffer**
 pip install -r requirements.txt
 ```
 
-## Run the snippe
+## Run the snippet
 
 ```bash
 python main.py

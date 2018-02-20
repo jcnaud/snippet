@@ -10,7 +10,8 @@ Collection of snippet
 Language :
 - Python
   - argparse
-  - dictdiff : diff/patch of dictionnary
+  - deepdiff : diff/patch of dictionnary
+  - dictdiffer : diff/patch of dictionnary (**avoid this and use deepdiff**)
   - doctest : simple test inside documentation
   - jinja2
   - jsonschema
