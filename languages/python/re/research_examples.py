@@ -23,7 +23,7 @@ def main():
     print(res.group(0)) # Display matching
 
 
-    print(" === Mulit ligne and Mono research === ")
+    print(" === Multi ligne and Mono research === ")
 
     res = re.match('X', 'A\nB\nX', re.MULTILINE)    # No match because implicitly start at the begining of the string (not the ligne)
     print(res)
@@ -43,13 +43,13 @@ def main():
         print("    "+str(m))
 
 
-    print(" === Mulit ligne and Multi research === ")
+    print(" === Multi ligne and Multi research === ")
 
     res = re.search('^X', 'A\nB\nX\nX\nX', re.MULTILINE)  # Match Just the first
     print(res)
     res = re.findall('^X', 'A\nB\nX\nX\nX', re.MULTILINE)  # Match all and put in <list>
     print(res)
-    res = re.finditer('^X', 'A\nB\nX\nX\nX', re.MULTILINE)  # Match all with yield (generator)
+    res = re.finditer('^X', 'A\nB\nX3\nX5\nX6', re.MULTILINE)  # Match all with yield (generator)
     print(res) 
     for m in res:
         print("    "+str(m))
