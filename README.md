@@ -14,6 +14,7 @@ Language :
   - jinja2
   - jsonschema
   - logging
+  - pytest : advanced unit test
   - re
     - binary_parsing
     - regex_sub (substitution)
