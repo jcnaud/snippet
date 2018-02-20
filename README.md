@@ -20,6 +20,7 @@ Language :
     - regex_sub (substitution)
     - research_examples (match, search, findall, fullmatch, finditer)
   - schema
+  - sphinx: autmatic/manual documentation with doc inside the code
   - subprocess
     - real_time_cmd : get stdout and stderr in real time
     - run_cmd : manage terminal command error
