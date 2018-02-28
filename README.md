@@ -22,6 +22,9 @@ Language :
     - regex_sub (substitution)
     - research_examples (match, search, findall, fullmatch, finditer)
   - schema
+  - socket
+    - bidirectional_multi_client
+    - unidiretional
   - sphinx: autmatic/manual documentation with doc inside the code
   - subprocess
     - real_time_cmd : get stdout and stderr in real time
