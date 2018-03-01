@@ -29,4 +29,9 @@ Language :
   - subprocess
     - real_time_cmd : get stdout and stderr in real time
     - run_cmd : manage terminal command error
+  - threading
+    - call_parent_function_from_childs_with_lock
+    - call_parent_function_from_childs
+    - callback_when_child_end
+    - queue_simple
   - unittest
