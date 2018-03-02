@@ -21,6 +21,7 @@ Language :
     - binary_parsing
     - regex_sub (substitution)
     - research_examples (match, search, findall, fullmatch, finditer)
+  - schedule : Crontab/at like
   - schema
   - socket
     - bidirectional_multi_client
