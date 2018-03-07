@@ -25,12 +25,14 @@ If the project is empty (**not this one**), use this :
 ```bash
 mkdir doc
 cd doc
+echo "!.gitignore
+/build" > .gitignore
 sphinx-quickstart .
 ```
 
 | Question                                                | Reponse |
 |-------------------------------------------------------- |-------- |
-| Separate source and build directories (y/n) [y]:        | Enter |
+| Separate source and build directories (y/n) [n]:        | y |
 | Name prefix for templates and static dir [_]:           | Enter |
 | Project name:                                           | Project test      |
 | Author name(s):                                         | Jean-Charles Naud |
@@ -47,7 +49,7 @@ sphinx-quickstart .
 | imgmath: include math, rendered as PNG or SVG images (y/n) [n]:                 | y       |
 | mathjax: include math, rendered in the browser by MathJax (y/n) [n]:            | y       |
 | ifconfig: conditional inclusion of content based on config values (y/n) [n]:    | y       |
-| viewcode: include links to the source code of documented Python objects (y/n) [n]:    | Enter |
+| viewcode: include links to the source code of documented Python objects (y/n) [n]:    | y |
 | githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: | Enter |
 | Create Makefile? (y/n) [y]:               | Enter |
 | Create Windows command file? (y/n) [y]:   | Enter |
