@@ -13,6 +13,7 @@ Language :
   - deepdiff : diff/patch of dictionnary
   - dictdiffer : diff/patch of dictionnary (**avoid this and use deepdiff**)
   - doctest : simple test inside documentation
+  - flask : small web framework
   - jinja2
   - jsonschema
   - logging
