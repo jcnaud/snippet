@@ -3,3 +3,13 @@ username = {{ user }}
 
 # Define IPs list
 IPS = {{ IPs | join(', ') }}
+
+{% for ip in IPs -%}
+{%- if ip == '127.0.0.1' %}
+local ip : {{ ip }}
+{%- elif ip == '192.168.0.1' %}
+private ip : {{ ip }}
+{%- else %}
+other ip : {{ ip }}
+{% endif %}
+{%- endfor %}
