@@ -17,6 +17,7 @@ Language :
   - jinja2
   - jsonschema
   - logging
+  - multiprocessing : Many multiprocess exemple
   - pytest : advanced unit test
   - re
     - binary_parsing
