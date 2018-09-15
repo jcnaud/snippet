@@ -2,7 +2,7 @@
 
 
 ## Context
-Flask is a samll web framework to make API REST 
+Flask is a small web framework to make API REST
 
 ## Dependancy of this snippet
 Intall dependancy of this project:
@@ -15,6 +15,13 @@ Run simple.py:
 ```bash
 FLASK_APP=simple.py flask run
 ```
+or
+
+```bash
+python simple.py
+```
+
+
 
 The api run on http://127.0.0.1:5000/
 
