@@ -1,0 +1,17 @@
+class       : SpatialPolygonsDataFrame 
+features    : 1 
+extent      : 305844.8, 400572.3, 6738014, 6856448  (xmin, xmax, ymin, ymax)
+coord. ref. : +init=epsg:2154 +proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs 
+variables   : 11
+names       :                ID_GEOFLA, CODE_DEPT,        NOM_DEPT, CODE_CHF, NOM_CHF, X_CHF_LIEU, Y_CHF_LIEU, X_CENTROID, Y_CENTROID, CODE_REG,  NOM_REG 
+min values  : DEPARTEM0000000000000020,        35, ILLE-ET-VILAINE,      238,  RENNES,     351870,    6789646,     326237,    6845888,       53, BRETAGNE 
+max values  : DEPARTEM0000000000000020,        35, ILLE-ET-VILAINE,      238,  RENNES,     351870,    6789646,     326237,    6845888,       53, BRETAGNE 
+[1] " - dep"
+class       : SpatialPointsDataFrame 
+features    : 656476 
+extent      : 305852.4, 400543.1, 6738076, 6856352  (xmin, xmax, ymin, ymax)
+coord. ref. : +init=epsg:2154 +proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs 
+variables   : 1
+names       :                 v 
+min values  : -4417.40771484375 
+max values  :      94755.921875 
