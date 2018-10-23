@@ -18,6 +18,11 @@ def show_post(post_id):
     # show the post with the given id, the id is an integer
     return 'Post %d' % post_id
 
+@app.route('/geterror/<int:error_id>')
+def geterror():
+    response = jsonify({'message':'you have the error %d' % error_id})
+    return response, error_id
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':

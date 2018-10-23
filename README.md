@@ -13,6 +13,7 @@ Language :
   - deepdiff : diff/patch of dictionnary
   - dictdiffer : diff/patch of dictionnary (**avoid this and use deepdiff**)
   - doctest : simple test inside documentation
+  - exception : use exception and traceback
   - flask : small web framework
   - jinja2
   - jsonschema
@@ -23,6 +24,7 @@ Language :
     - binary_parsing
     - regex_sub (substitution)
     - research_examples (match, search, findall, fullmatch, finditer)
+  - resquest : simple  HTTP request example
   - schedule : Crontab/at like
   - schema
   - socket
