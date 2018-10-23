@@ -1,0 +1,19 @@
+*** Starting uWSGI 2.0.17 (64bit) on [Fri May 11 09:56:55 2018] ***
+compiled with version: 5.4.0 20160609 on 09 May 2018 09:38:38
+os: Linux-4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016
+nodename: edugastp
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/jnaud/var/github/snippet/softs_web/ngnix/examples/uwsgi_falcon
+detected binary path: /home/jnaud/var/github/snippet/venv/bin/uwsgi
+chdir() to .
+your processes number limit is 31442
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:3031).
+bind(): Address already in use [core/socket.c line 769]
