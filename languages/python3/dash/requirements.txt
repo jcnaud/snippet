@@ -1,0 +1,7 @@
+#dash==0.28.5  # The core dash backend
+#dash-html-components==0.13.2  # HTML components
+#dash-core-components==0.34.0  # Supercharged components
+
+dash
+dash-html-components
+dash-core-components

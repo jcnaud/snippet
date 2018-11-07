@@ -17,7 +17,6 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-
 global_value = 'Hello, World !'
 
 
@@ -25,8 +24,10 @@ global_value = 'Hello, World !'
 def hello_world():
     return global_value
 
+
 # Without decorator
 app.route('/')(hello_world)
+
 
 @app.route('/user/<username>')
 def show_user_profile(username):
@@ -34,10 +35,12 @@ def show_user_profile(username):
     # show the user profile for that user
     return 'User %s' % username
 
+
 @app.route('/post/<int:post_id>')
 def show_post(post_id):
     # show the post with the given id, the id is an integer
     return 'Post %d' % post_id
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -78,11 +81,10 @@ if __name__ == '__main__':
     options = {
         'bind': '%s:%s' % ('127.0.0.1', '5000'),
         'workers': 2,
-        'reload' : True
+        'reload': True
     }
 
     print('before : '+global_value)
-
 
     sa = StandaloneApplication(app, options)
     print(str(sa.__dict__))
@@ -91,13 +93,10 @@ if __name__ == '__main__':
 
     inspect.getmembers(gunicorn.app.base.BaseApplication)
 
-
-    t = threading.Thread(target=worker,args=(sa,))
+    t = threading.Thread(target=worker, args=(sa,))
     t.setDaemon(True)
     t.start()
 
     #time.sleep(5)
     print('after : '+global_value)
-    sa.run() # Blocking step
-
-reload
+    sa.run()  # Blocking step

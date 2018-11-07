@@ -1,4 +1,7 @@
 /venv
+/.tags*
 *.pyc
 __pycache__
 .pytest_cache
+.ropeproject
+.ipynb_checkpoints

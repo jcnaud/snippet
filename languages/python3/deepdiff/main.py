@@ -14,7 +14,7 @@ def main():
     ddiff = DeepDiff(t1, t2, ignore_order=True)
     print(ddiff)
     # {}
-    
+
     ddiff = DeepDiff(t1, t2, ignore_order=True, report_repetition=True)
     print(ddiff)
     # {'repetition_change': {"root[4]['b'][2]": {'new_indexes': [1, 3], 'value': 3, 'old_repeat': 1, 'new_repeat': 2, 'old_indexes': [2]}}}
