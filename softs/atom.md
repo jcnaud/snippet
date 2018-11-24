@@ -24,5 +24,4 @@ pip install python-language-server==0.19.0
 ```
 
 ## Packages to test:
-- atom-ctags
 - rst-preview-pandoc
