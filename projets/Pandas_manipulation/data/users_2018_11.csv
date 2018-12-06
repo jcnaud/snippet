@@ -1,0 +1,5 @@
+id;name;email;age;size;timestamp;date
+0;Nolan;nolan@example.com;27;1.75;1544090329;2018-11-20 10:15:12
+1;Evan;evan@example.com;34;1.65;;
+2;Tess;tess@example.com;26;;1544089309;2018-11-19 10:10:42
+3;Linda;linda@example.com;;1.83;1544067709;2018-11-8 18:12:48
