@@ -3,5 +3,7 @@
 #dash-core-components==0.34.0  # Supercharged components
 
 dash
+dash-renderer
 dash-html-components
 dash-core-components
+plotly
