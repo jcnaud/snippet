@@ -1,5 +1,28 @@
 # QGIS 3.4
 
+
+
+## Install
+
+Source : https://www.qgis.org/fr/site/forusers/alldownloads.html#debian-ubuntu
+
+
+Ajouter :
+```bash
+sudo sh -c 'echo "deb http://qgis.org/ubuntu-ltr bionic main" > /etc/apt/sources.list.d/qgis.list'
+sudo sh -c 'echo "deb-src http://qgis.org/ubuntu-ltr bionic main" >> /etc/apt/sources.list.d/qgis.list'
+
+
+wget -O - http://qgis.org/downloads/qgis-2017.gpg.key | gpg --import
+gpg --fingerprint CAEB3DC3BDF7FB45
+gpg --export --armor CAEB3DC3BDF7FB45 | sudo apt-key add -
+```
+
+```bash
+sudo apt-get install qgis
+```
+
+
 ## Plugin to install
 Usage general:
 - QuickOSM

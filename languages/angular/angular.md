@@ -3,25 +3,34 @@
 
 ## Installation
 
-### Installation npm
+### Node js
+https://github.com/nodesource/distributions/blob/master/README.md#debinstall
+
 ```bash
-apt-get install npm
+sudo apt-get install -y nodejs
 ```
 
-### Installation angular
+### Installation npm
+```bash
+sudo npm install npm@latest -g
+```
+
+### Installation angular cli
 ```bash
 npm install -g @angular/cli
 ```
 
 ### Installation Yarn
 Installer Yarn :
+```
 ng set --global packageManager=yarn
+```
 
 ## Init new project
 ```bash
 ng new my-project
 cd my-project
-ng serve
+ng serve # You can use --open
 ```
 
 ##
@@ -77,4 +86,3 @@ Create and link to one module
 ```bash
 ng generate service hero --module=app
 ```
-
