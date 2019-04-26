@@ -42,6 +42,7 @@ Plugin to test:
 
 ## Plugin directory
 %userprofile%\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins
+
 ## Plugin natif processing directory:
 C:\var\install\QGIS 3.4\apps\qgis\python\plugins\processing\algs
 
