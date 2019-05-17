@@ -40,7 +40,7 @@ def main():
     res = re.finditer("c", "abcdecfc")  # Match all with yield (generator)
     print(res) 
     for m in res:
-        print("    "+str(m))
+        print("    "+str(m)+"   index: "+str(m.start()))
 
 
     print(" === Multi ligne and Multi research === ")
@@ -52,14 +52,14 @@ def main():
     res = re.finditer('^X', 'A\nB\nX3\nX5\nX6', re.MULTILINE)  # Match all with yield (generator)
     print(res) 
     for m in res:
-        print("    "+str(m))
+        print("    "+str(m)+"   index: "+str(m.start()))
 
 
     print(" === Groupindex example === ")
     res = re.finditer(r"(?P<name>^X)", 'A\nB\nX\nX\nX', re.MULTILINE)  # Match with groupindex
     print(res)
     for m in res:
-        print("    "+str(m.group("name"))) # Display matching
+        print("    "+str(m.group("name"))+"   index: "+str(m.start()))# Display matching
 
 
     print(" === End of this programme ===")   
