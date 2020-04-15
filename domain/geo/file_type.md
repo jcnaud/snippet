@@ -30,3 +30,8 @@
 
 ## PBF ("Protocolbuffer Binary Format)
 - primarily intended as an alternative to the XML format (50% ligther or 30% ligther than xml zipped)
+
+
+| Command | Description |
+|- |- |
+| Crop | ```osmconvert karlsruhe-regbez-latest.osm.pbf -b=7.893,48.73,8.816,49.246 -o=data/karlsruhe-latest.osm.pbf``` |

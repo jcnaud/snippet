@@ -1,33 +1,50 @@
 # npm
 
-Npm est un paquet écrit en javascript permetant l'installation de paquets.
-nodejs est un compilateur/exécuteur javascript.
+Npm is a javascript package alow to install javascript package.
+Node Js is a compiler/interpretor javascript.
 
 
-## Installation sous linux
+
+## Install on linux
 
 source : https://lesbricodeurs.fr/articles/Comment-installer-npm-proprement/
 
-npm est capable d'installer npm et nodejs.
+npm can install npm and Node JS.
+
+### npm
+```bash
 sudo apt install curl
+curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+sudo bash ./nodesource_setup.sh
+rm nodesource_setup.sh
+```
 
-
-
-curl -sL https://deb.nodesource.com/setup_10.x > tt.sh
-sudo bash ./tt.sh
-rm tt.sh
-
+### Node Js
+```bash
+sudo apt update
 sudo apt install nodejs
+```
 
+Check if the versions of nom and Node JS
 
-
+```bash
 node -v
 npm -v
+```
+
+#### Option configuration de Node JS
+
+For configure a launch of Node JS, you need to une a configuration file.
 
 
-edit http_server.js
+source : https://lesbricodeurs.fr/articles/Comment-installer-npm-proprement/
 
+Create and edit le file
+```bash
+editor http_server.js
+```
 
+```javascript
 const http = require('http');
 
 const hostname = '127.0.0.1';
@@ -42,36 +59,43 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+```
 
 
+### Make clean install
 
-source : https://lesbricodeurs.fr/articles/Comment-installer-npm-proprement/
+In order to make a clean install for a full acces for the userfor all project. We need to change the where all javascript packages are installed.
 
-
-
+```bash
 mkdir ~/.npm-global
+```
+
+
 This command add ~/.npmrc file with specified option
+```bash
 npm config set prefix '~/.npm-global'
+```
 
 Add in .prolfile or in .bachrc
+```bash
 export PATH=~/.npm-global/bin:$PATH
-
-sourcer ~/.profile
-
-
-vue create my project
+```
 
 
+Restart the terminal or source the profile
+```bash
+source ~/.profile
+```
 
+
+
+## Run node
+
+```bash
 node http_server.js
+```
 
-
-
-
-
-
-node -v
-npm -v
+### Update npm
 
 ```bash
 npm install npm@latest -g
@@ -101,6 +125,7 @@ npm install -g typescript
 ls ~/.npm-global/lib/node-modules
 
 
+vue create my project
 
 npm install -g @vue/cli
 vue create my-project

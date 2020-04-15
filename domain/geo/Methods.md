@@ -6,8 +6,6 @@
 - run vector tile server
 - use client js
 
-
-
 - sourve: https://github.com/openmaptiles/openmaptiles-skiing
 
 It use in sub tools: import-iosm MIT : https://github.com/openmaptiles/import-osm
@@ -29,6 +27,7 @@ Get OSM data (Europe = 20G)
 ```bash
 cd data
 wget http://download.geofabrik.de/europe-latest.osm.pbf
+wget http://download.geofabrik.de/europe/france/bretagne-latest.osm.pbf
 ```
 
 Put OSM data pbf to postgresql using ```build/mapping.yaml```` created by make
@@ -56,3 +55,41 @@ sudo docker run -d --restart unless-stopped -v /opt/maps:/data -p 10001:80 kloka
 
 
 //sudo npm install --unsafe-perm=true -g tileserver-gl-light
+
+
+
+
+
+
+
+## === Test real  ===
+
+
+Get OSM Bretagne (250 Mo)
+```bash
+mkdir data
+cd data
+wget http://download.geofabrik.de/europe/france/bretagne-latest.osm.pbf
+cd ..
+```
+
+Get openmaptiles-tools (MIT License)
+```
+git clone https://github.com/openmaptiles/openmaptiles-tools.git
+cd openmaptiles-tools
+git checkout v4.0.0
+```
+
+
+
+docker run -it --rm -u $(id -u ${USER}):$(id -g ${USER}) \
+           -v "${PWD}:/tileset" \
+           openmaptiles/openmaptiles-tools \
+           <script-name> <script-parameters>
+
+
+      make download-geofabrik area=albania
+
+
+## === Test 2 ===
+https://blog.project-insanity.org/2018/10/29/host-your-own-mapbox-gl-js-vector-tiles-map/

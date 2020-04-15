@@ -1,0 +1,17 @@
+numpy
+scipy
+matplotlib
+opencv-python
+opencv-contrib-python
+
+pillow
+h5py
+scikit-learn
+scikit-image
+tensorflow
+tensorflow-gpu
+keras
+
+
+#Visualization
+pydot

@@ -71,3 +71,29 @@ ogr2ogr:
   - DBMS
 
 
+## OSM Tool
+url : https://hub.docker.com/r/mediagis/osmtools/
+ - osmconvert - can be used to convert and process OpenStreetMap files (Ex: Crop)
+  - Exemple: ./osmconvert file.pbf -o=file.o5m
+ - osmfilter - is a command line tool used to filter OpenStreetMap data files for specific tags.
+   - Process only .osm format and .o5m format (not .osm.pbf)
+ - osmupdate - downloads and cumulates OSM Changefiles of different categories (minutely, hourly, daily).
+
+
+
+
+Import OSM file to Posgresql/PostGIS:
+- osm2pgsql
+  - Approche par nature de géométrie:
+    - Ex: table: 
+      - planet_osm_line
+      - planet_osm_nodes
+      - planet_osm_point
+      - planet_osm_polygon
+- imposm
+  - Approche par nature d'object
+    - Ex: table: 
+      - boundary
+      - transportation
+      - place
+      - water

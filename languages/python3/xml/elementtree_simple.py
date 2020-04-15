@@ -49,6 +49,9 @@ def main():
 
     # All 'neighbor' nodes that are the second child of their parent
     print(root.findall(".//neighbor[2]"))
+    
+    print(root.findall(".//neighbor[2]")[0].attrib['name'])
+
 
 if __name__ == '__main__':
     main()

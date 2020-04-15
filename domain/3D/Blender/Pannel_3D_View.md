@@ -1,13 +1,12 @@
 # 3D view
 
-
- - Click G on arrow on Upper left of the view: Options 
+ - Click G on arrow on Upper left of the view: **Options**
 
 ## Object mode
  - shift + c: center le viewport
  
  - shift + a: open nemu add objectA
- - [in all menu] click d : add to quick menu
+ - [in all menu] click-right : add to quick menu
   - [object selected] shade smooth
     - Undu with shade flat
  - q: open quick menu
@@ -15,7 +14,7 @@
 
  - [object selected] / (pad) : Hide other object and center vieport on selected object
   - / (pad): Undo
- - [object selected] ctrl +g: group object 
+ - [object selected] ctrl +g: group object
  - [object selected] ctrl + a: Open Apply menu
 
 - n: Open right tab

@@ -30,11 +30,10 @@ vue ui
 ```
 
 
-
+```bash
 vue init vuetifyjs/webpack demo-app
-
 vue add vuetify
-
+```
 
 ```
 <template>
