@@ -15,15 +15,22 @@
  - [object selected] / (pad) : Hide other object and center vieport on selected object
   - / (pad): Undo
  - [object selected] ctrl +g: group object
- - [object selected] ctrl + a: Open Apply menu
 
-- n: Open right tab
+- n: Open right tab 
 - z: open small menu
+
+#### Apply menu : [object selected] ctrl + a
+
+ - Rotation and scales : Convert the object to have not transformed coordonate
+
+
+
 ## Edit mode
  - [in all menu] click d : add to quick menu
   - [face selected] shade smooth
 
 - shift + clic d: fix the mire
+
 
 ### Generale
 
@@ -58,6 +65,22 @@
 - [selected object] ctrl +j : join objects
 
 ### Editing : Make
+
+#### View menu:
+#### Select menu:
+#### Add menu: shift + a 
+#### Mesh menu
+[faces or edges selected] mark seam  : Seam form texture mapping
+
+#### Vertex menu : ctrl + v
+#### Edge menu : ctrl + e
+#### Face menu : ctrl + f
+#### UV menu : [selected something] u
+ - Unwrap : unwrap (see seam)
+
+
+
+
  - k: draw verticle
    - Enter to validate
 
