@@ -33,3 +33,7 @@ Begginnner exercices:
 
 Weighted Normal:
  - Weighted Normal | Blender 2.8x Tutorial : https://www.youtube.com/watch?v=sqGFhiP-2mc
+
+
+Handpaint:
+- Hand Painted Wood | Detailed follow along guide | Blender 2.8 : https://www.youtube.com/watch?v=lIe5noBp2kU
