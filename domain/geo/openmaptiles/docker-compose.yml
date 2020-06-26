@@ -1,0 +1,9 @@
+version: '3'
+services:
+  openmaptiles:
+    image: klokantech/openmaptiles-server
+    container_name: openmaptiles
+    volumes:
+      - ./data:/data 
+    ports:
+      - 8080:80
