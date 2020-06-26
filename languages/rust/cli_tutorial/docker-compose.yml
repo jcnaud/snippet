@@ -1,0 +1,12 @@
+version: '3'
+services:
+  rust_cli_tutorial:
+    image: rust
+    container_name: rust_cli_tutorial
+    #volumes: 
+    #  - ./xxx:/xxx
+    #ports:
+    #  - "80:80"  
+    #environements:
+    #  - KEY="value"
+    #command: /bin/bash
