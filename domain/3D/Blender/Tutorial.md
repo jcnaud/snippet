@@ -37,3 +37,14 @@ Weighted Normal:
 
 Handpaint:
 - Hand Painted Wood | Detailed follow along guide | Blender 2.8 : https://www.youtube.com/watch?v=lIe5noBp2kU
+
+Texture :
+- Blender 2.8 PBR Texturing for Beginners : https://www.youtube.com/watch?v=XI-pZshRp8g
+
+Bake (create) Normal map:
+- BUG RESULT:  Blender 2.8 - How to bake textures - Tutorial : https://www.youtube.com/watch?v=2ClzsuExtCo
+- Baking Perfect Texture Maps Using a Cage | Blender 2.8 : https://www.youtube.com/watch?v=nJ0PM7m9TJc
+
+
+Hard surface:
+- Blender Hard Surface Modeling | Slice Operation : https://www.youtube.com/watch?v=IRJCChNu_pQ
