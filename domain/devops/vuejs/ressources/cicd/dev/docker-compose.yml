@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  vuejs_devops_web:
+    image: vuejs_devops_dev_web       # Docker image name
+    container_name: vuejs_devops_dev_web   # Docker container name
+    build: ./web                                   # Build images with this ./Dockerfile
+    volumes:
+      - ../..:/home/node/app                   # Mount this code sources (../..) in container
+    environment:
+      - TZ=Europe/Paris
+    env_file:
+      - ./docker-compose.env
+    ports:
+      - "8080:8080"
+
+
+networks:
+  default:
+      name: vuejs_devops
