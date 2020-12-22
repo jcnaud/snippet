@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  vuejs_devops_web:
+    image: vuejs_devops_web:latest
+    container_name: vuejs_devops_web   # Docker container name
+    ports:
+      - "4200:80"
+
+networks:
+  default:
+    name: vuejs_devops_network

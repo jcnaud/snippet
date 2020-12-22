@@ -1,8 +1,9 @@
 ###
 
 
-- Get OSM data
-- Convert to mbtiles
+- Get OSM data  (geofabrik))
+- Import OSM data in postgresql database (ipmosm)
+- Convert DB to mbtiles
 - run vector tile server
 - use client js
 
@@ -93,3 +94,15 @@ docker run -it --rm -u $(id -u ${USER}):$(id -g ${USER}) \
 
 ## === Test 2 ===
 https://blog.project-insanity.org/2018/10/29/host-your-own-mapbox-gl-js-vector-tiles-map/
+
+```bash
+git clone https://github.com/openmaptiles/openmaptiles.git
+cd openmaptiles
+make
+mkdir data
+wget "https://download.geofabrik.de/europe/germany/baden-wuerttemberg/karlsruhe-regbez-latest.osm.pbf"
+osmconvert karlsruhe-regbez-latest.osm.pbf -b=7.893,48.73,8.816,49.246 -o=data/karlsruhe-latest.osm.pbf
+sed -i "s/QUICKSTART_MAX_ZOOM=.*$/QUICKSTART_MAX_ZOOM=14/g" .env
+./quickstart karlsruhe-latest
+```
+

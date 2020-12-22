@@ -48,8 +48,8 @@ git clone https://github.com/openmaptiles/openmaptiles.git
 cd openmaptiles
 git checkout v3.11
 make
-mkdir data_download 
-wget http://download.geofabrik.de/europe/france/bretagne-latest.osm.pbf -O /data_download/osm-data/bretagne-latest.osm.pbf
+mkdir -p data_download/osm-data 
+wget http://download.geofabrik.de/europe/france/bretagne-latest.osm.pbf -O ./data_download/osm-data/bretagne-latest.osm.pbf
 ```
 
 
@@ -66,6 +66,7 @@ See more at :
 Get the BBox of Rennes
 ```bash
 docker run --rm  -it --volume "${PWD}/data_download:/osm" mediagis/osmtools /bin/bash
+cd osm-data
 osmconvert bretagne-latest.osm.pbf -o=bretagne-latest.o5m
 osmfilter bretagne-latest.o5m --keep="admin_level=8 and boundary=administrative and name=Rennes" -o=rennes_boundary.osm
 osmconvert --out-statistics rennes_boundary.osm
@@ -93,13 +94,12 @@ Go out of the docker with ```exit```
 
 ```bash
 mkdir data
-mv data_download/rennes.osm.pbf data/rennes.osm.pbf
+mv data_download/osm-data/rennes.osm.pbf data/rennes.osm.pbf
 
 sed -i "s/QUICKSTART_MAX_ZOOM=.*$/QUICKSTART_MAX_ZOOM=14/g" .env
-./quickstart.sh rennes
 ```
 
-To avoid bug
+To avoid a bug
 
 vim ./data/docker-compose-config.yml
 ```yml
@@ -107,14 +107,20 @@ version: "2"
 services:
   generate-vectortiles:
     environment:
-      BBOX: "-1.7525876, 48.0769155, -1.6244045, 48.1549705 "
+      BBOX: "-1.7525876, 48.0769155, -1.6244045, 48.1549705"
       OSM_MAX_TIMESTAMP : "2020-04-01T20:54:00Z"
       OSM_AREA_NAME: "rennes"
       MIN_ZOOM: "0"
       MAX_ZOOM: "14"
 ```
 
+Run the process
 
+```bash
+./quickstart.sh rennes
+```
+
+The result are in ```./data/tiles.mbtiles```
 
 ## TODO
 

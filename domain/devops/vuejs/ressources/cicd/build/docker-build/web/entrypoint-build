@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+echo " # fix uid and gid"
+if [ -n "$LOCAL_USER_ID" ]
+then
+  usermod -u $LOCAL_USER_ID node
+
+fi
+if [ -n "$LOCAL_GROUP_ID" ]
+then
+  groupmod -g $LOCAL_GROUP_ID node
+fi
+
+#chown node:node /home/node/app
+
+echo " # sleep infinity"
+sleep infinity

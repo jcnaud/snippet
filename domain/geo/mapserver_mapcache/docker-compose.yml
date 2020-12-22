@@ -1,0 +1,48 @@
+version: '3.5'
+
+services:
+  proxy:
+    image: nginx:latest
+    container_name: proxy
+    volumes: 
+     - ./data/proxy/conf:/etc/nginx/conf.d
+     #- ./data/proxy/ssl:/etc/nginx/certs
+     #- ./data/proxy/letsencrypt:/etc/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"
+
+  mapserver:
+    image: camptocamp/mapserver:7.4
+    container_name: mapserver
+    #ports:
+    #  - "8080:8080"
+    volumes: # For multiple map file
+      - ./data/mapserver/ms4w:/ms4w  # Contain tutorial data
+      - ./data/mapserver/wms.map/:/etc/mapserver/wms.map:ro  # Contain wms *.map conf file
+      - ./data/mapserver/wms/:/mapdata/wms/:ro               # Contain data for wms
+      #- ./data/mapserver/wfs.map/:/etc/mapserver/wfs.map:ro  # Contain wfs *.map conf file
+      #- ./data/mapserver/wfs/:/mapdata/wfs/:ro               # Contain data for wfs
+    #env_file:
+    #  - docker-compose.env
+    environment:
+      MS_DEBUGLEVEL: 5
+    user: www-data
+
+  #mapcache:
+  #  image: camptocamp/mapcache:1.10
+  #  container_name: mapcache
+  #  #ports:
+  #  #  - "8281:8080"
+  #  volumes: # For multiple map file
+  #    - ./data/mapcache/mapcache.xml:/etc/mapcache/mapcache.xml:ro   # configfile
+  #    - ./data/mapcache/tiles/:/var/sig/tiles            # Cache file of tiles
+  #    - ./data/mapserver/wms.map/:/map:ro  # Contain *.map conf file for map server
+  #    #- ./data/mapcache/headers.load:/etc/apache2/mods-enabled/headers.load:ro # Enable cors
+  #    #- ./data/mapcache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf # Enable cors
+  #    #- ./data/mapcache/cors.conf:/etc/apache2/conf-enabled/cors.conf:ro  # Enable cors
+  #  #env_file:
+  #  #  - docker-compose.env
+  #  user: www-data
+  #  depends_on:
+  #    - mapserver

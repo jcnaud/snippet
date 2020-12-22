@@ -1,0 +1,6 @@
+# kubectl create namespace app
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app

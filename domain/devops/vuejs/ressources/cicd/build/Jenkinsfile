@@ -1,0 +1,54 @@
+pipeline {
+  agent any
+  options { disableConcurrentBuilds() }
+  stages {
+    stage('Fetch dependencies') {
+      agent any
+      steps {
+        sh 'cicd/build/0_fetch-dependencies.sh'
+        stash includes: 'node_modules/', name: 'node_modules'
+      }
+    }
+    stage('Lint') {
+      agent any
+      steps {
+        unstash 'node_modules'
+        sh 'cicd/build/1_lint.sh'
+      }
+    }
+    stage('Build prod') {
+      agent any
+      steps {
+        unstash 'node_modules'
+        sh 'cicd/build/3_build-prod.sh'
+        stash includes: 'dist/', name: 'dist'
+      }
+    }
+    stage('Make release') {
+      agent any
+      steps {
+        unstash 'dist'
+        sh 'cicd/build/5_make_release.sh'
+        stash includes: 'jenkins_release/', name: 'jenkins_release'
+      }
+    }
+    stage('Make docker') {
+      agent any
+      steps {
+        unstash 'jenkins_release'
+        sh 'cicd/build/6_make_docker.sh'
+        stash includes: 'jenkins_release/', name: 'jenkins_release'
+      }
+    }
+  }
+  post {
+    success {
+        unstash 'jenkins_release'
+        archiveArtifacts artifacts: 'jenkins_release/*.tar.gz', onlyIfSuccessful: true
+        archiveArtifacts artifacts: 'jenkins_release/*.docker', onlyIfSuccessful: true
+    }
+    always {
+        sh 'cicd/build/99_clean.sh'
+    }
+  }
+}

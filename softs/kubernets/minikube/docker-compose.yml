@@ -1,0 +1,9 @@
+version: '3'
+services:
+  minikube_web:
+    image: minikube_web
+    container_name: minikube_web  # Docker container name
+    build: .
+
+    ports:
+      - "8081:8080"
