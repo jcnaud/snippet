@@ -1,0 +1,39 @@
+version: '3.5'
+services:
+  salt:
+    build: build/salt
+    image: salt
+    container_name: salt
+    #volumes: 
+    #  - ./data/salt/master.d:/etc/salt/master.d
+    #  - ./data/salt/minion.d:/etc/salt/minion.d
+    ports:
+      - 4505:4505
+      - 4506:4506
+      - 8000:8000
+    environment:
+      - SALT_SHARED_SECRET=mysecretpassword
+      #- SALT_MASTER_CONFIG="" # Not used, use config file with volume
+      #- SALT_API_CONFIG="" # Not used, use config file with volume
+
+  minion:
+    build: build/minion
+    image: minion
+    container_name: minion # prevents scaling
+    ports:
+      - "14505:4505"
+      - "14506:4506"
+    volumes:
+      - ./data/minion/config:/etc/salt
+      #- ./assets/minion/var/cache/salt:/var/cache/salt
+      #- ./assets/minion/var/log/salt:/var/log/salt
+    command: /usr/bin/salt-minion --log-file=/var/log/salt/salt-minion.log --log-file-level=debug
+
+networks:
+  default:
+    name: salt
+
+# Check certificate validity
+#docker run -it saltstack/salt:latest /bin/sh -c "apk add openssl >/dev/null; openssl x509 -dates -noout -in /etc/pki/tls/certs/localhost.crt"
+# Regenerate certificate
+#docker run -it saltstack/salt:latest /bin/sh -c "apk add openssl >/dev/null; rm -rf /etc/pki/tls/certs/*; salt-run salt.cmd tls.create_self_signed_cert; openssl x509 -dates -noout -in /etc/pki/tls/certs/localhost.crt"
