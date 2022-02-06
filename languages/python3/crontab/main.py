@@ -4,7 +4,7 @@
 from crontab import CronTab
 
 # Work on Windows too
-
+CronTab()
 file_cron = CronTab(tabfile='filename.tab')
 mem_cron = CronTab(tab="""
   * * * * * command
