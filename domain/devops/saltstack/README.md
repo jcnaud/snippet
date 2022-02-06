@@ -17,8 +17,81 @@ All client and central master are connected with bi-directionnal bus communcatio
 ## Buld docker image
 
 ```bash
-docker-compose build --build-arg SALT_VERSION=3003
+docker-compose build salt --build-arg SALT_VERSION=3003
+docker-compose build minion
 ```
+
+Run
+```bash
+docker-compose up
+```
+
+Accept the ssh key from the minion
+```
+# Display minion id
+docker exec minion cat /etc/salt/minion_id
+# Display key on master
+docker exec -it salt salt-key -L
+# Accept the key
+docker exec -it salt salt-key -a 7c9c7d373ca0
+```
+
+
+
+
+## Troubleshooting
+
+The Salt Master server's public key did not authenticate!
+
+```
+# On minion
+docker exec minion rm /etc/salt/pki/minion/minion_master.pub
+# Retart
+```
+
+## Usage
+
+Connect ```docker exec -it salt sh```
+| Command | Description |
+|- |- |
+| ```salt '*' test.ping``` | Ping all |
+| ```salt-run '*' sys.doc``` | Display all salt command |
+| ```salt-run '*' disk.usage``` | Display all salt command |
+| ```salt '*' cmd.run 'ls -l /etc'``` | Run command on all salt command |
+| ```salt '*' pkg.install vim``` | install vim |
+| ```salt '*' state.apply vim``` | check install vim |
+
+
+```sh
+mkdir -p /srv/salt
+cat <<EOF > /srv/salt/vim.sls
+vim-enhanced:
+  pkg:
+    - installed
+EOF
+```
+mkdir -p /srv/salt
+cat <<EOF > /srv/salt/tree.sls
+tree:
+  pkg:
+    - installed
+EOF
+salt '*' state.apply tree
+```
+
+```
+# Run sls
+salt '*' state.apply vim
+```
+
+
+
+
+echo 
+
+
+/srv/salt/vim.sls
+
 
 
 ## Run server

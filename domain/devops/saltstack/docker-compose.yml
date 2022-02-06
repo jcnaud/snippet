@@ -4,8 +4,12 @@ services:
     build: build/salt
     image: salt
     container_name: salt
-    #volumes: 
+    cap_add:
+      - CAP_SYS_ADMIN
+    privileged: true
+    volumes: 
     #  - ./data/salt/master.d:/etc/salt/master.d
+      - ./data/salt/pki_master:/etc/salt/pki/master
     #  - ./data/salt/minion.d:/etc/salt/minion.d
     ports:
       - 4505:4505
@@ -20,6 +24,9 @@ services:
     build: build/minion
     image: minion
     container_name: minion # prevents scaling
+    cap_add:
+      - CAP_SYS_ADMIN
+    privileged: true
     ports:
       - "14505:4505"
       - "14506:4506"
@@ -28,7 +35,8 @@ services:
       #- ./assets/minion/var/cache/salt:/var/cache/salt
       #- ./assets/minion/var/log/salt:/var/log/salt
     command: /usr/bin/salt-minion --log-file=/var/log/salt/salt-minion.log --log-file-level=debug
-
+    depends_on: 
+      - salt
 networks:
   default:
     name: salt

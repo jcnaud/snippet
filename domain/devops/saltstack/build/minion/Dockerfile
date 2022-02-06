@@ -1,11 +1,23 @@
 FROM centos:7
 
-RUN yum update  && \
-    yum install https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm  && \
-    yum clean expire-cache  && \
-    yum install salt-minion -y
+ENV SALT_VERSION=3000.9
 
-# Additional tools
-RUN yum install -y python-pip net-tools nmap git
+ADD start.sh /bin/start.sh
 
-CMD salt-minion
+RUN rpm --import https://repo.saltstack.com/yum/redhat/7/x86_64/archive/$SALT_VERSION/SALTSTACK-GPG-KEY.pub \
+  && echo -e "[saltstack-repo]\nname=SaltStack repo for RHEL/CentOS\$releasever\nbaseurl=https://repo.saltstack.com/yum/redhat/\$releasever/\$basearch/archive/$SALT_VERSION\nenabled=1\ngpgcheck=1\ngpgkey=https://repo.saltstack.com/yum/redhat/\$releasever/\$basearch/archive/$SALT_VERSION/SALTSTACK-GPG-KEY.pub\n" > /etc/yum.repos.d/saltstack.repo \
+  && yum install -y salt-minion-${SALT_VERSION}* epel-release sudo policycoreutils selinux-policy-targeted yum-plugin-ovl \
+  && mkdir -p /etc/salt/minion.d \
+  && echo -e "master: master" > /etc/salt/minion.d/masters.conf \
+  && sed -i -e 's/#hash_type.*/hash_type: sha256/' /etc/salt/minion \
+# fix for getty consume 100% cpu
+  && systemctl disable getty@tty1.service \
+# fix for systemd
+  && yum install -y initscripts \
+  && chkconfig salt-minion on \
+# cleanup
+  && rm -rf /var/lib/yum/* \
+  && yum clean all
+
+RUN chmod ugo+x /bin/start.sh
+ENTRYPOINT ["/bin/start.sh"]
