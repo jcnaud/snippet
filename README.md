@@ -40,3 +40,8 @@ Language :
     - callback_when_child_end
     - queue_simple
   - unittest
+
+
+Network:
+- monitoring
+  - nrpe: 
